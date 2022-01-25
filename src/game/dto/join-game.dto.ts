@@ -7,9 +7,11 @@ import {
 
 export class JoinGameDto {
   @IsString()
+  @MinLength(2)
   readonly name: string;
 
   @IsString()
+  @MinLength(2)
   readonly surname: string;
 
   @IsString({ each: true })

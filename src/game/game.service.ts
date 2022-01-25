@@ -30,7 +30,7 @@ export class GameService {
   async shuffle() {
     const users = await this.userService.findAllUsersRand();
 
-    const hasAlreadyShuffled = users[0].recipient;
+    const hasAlreadyShuffled = users[0]?.recipient;
     const hasEnoughPlayers = users.length >= 3;
 
     if (!hasEnoughPlayers) {
