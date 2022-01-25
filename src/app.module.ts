@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { UserModule } from './user/user.module';
+import { GameModule } from './game/game.module';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -9,6 +12,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    UserModule,
+    GameModule,
   ],
 })
 export class AppModule {}
